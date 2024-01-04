@@ -1,0 +1,5 @@
+#ignore this folder 
+PythonWork/
+
+#ignore this files
+*.csv
