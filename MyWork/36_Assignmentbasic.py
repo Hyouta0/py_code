@@ -5,3 +5,5 @@ if num == (int(num**0.5) * int(num**0.5)):
     print( True);
 else :
     print( False);
+
+
