@@ -8,7 +8,7 @@ for line in open(path):
         cnt+=1;
         continue;
     line = line.strip().split(',');
-    tmpemp = emp.Emp(int(line[0]),\
+    tmpemp = emp.Employee(int(line[0]),\
             line[1],line[2],int(line[3]),\
             float(line[4]),int(line[5]),int(line[6]));
     companyRec[int(line[0])] = tmpemp;
@@ -21,8 +21,8 @@ while(1):
     id = int(input("Enter id to find details : "));
     if(id in companyRec):
         empObj = companyRec[id];
-        empObj.Emp_print();
-        empObj.Emp_salDetail();
-        empObj.Emp_hearchi(companyRec);
+        empObj.printEmployee();
+        empObj.employeeSalDetail();
+        empObj.empManagersLevel(companyRec);
     else:
         print(f"{id} not found in data");
