@@ -1,14 +1,10 @@
 # write a program to compute fibonaci number of given number(recurssion);
+num = 10
 
-# 1,2,3,5;
+def fibonaci(num):
+    if(num <=1):
+        return num
+    return(fibonaci(num-1)+fibonaci(num-2))
+for i in range(num):
+    print(fibonaci(i))
 
-num1 =1;
-num2 =1;
-
-cnt =0;
-while(cnt <4):
-    cnt+=1;
-    tmp = num2;
-    num2 =num1;
-    num1 = tmp+num2;
-print(num2);
