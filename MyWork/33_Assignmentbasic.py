@@ -18,7 +18,7 @@ while(1):
     first_to_play = random.getrandbits(1);
     last_user = first_to_play;
     print("Game starts         matchsticks = ",matchsticks)
-    while(matchstick > 0):
+    while(matchsticks > 0):
         if(first_to_play):
             match_remove=int(input("Pick matchstickes atmost 4 : "));
             if(match_remove < 0 or match_remove >4):
