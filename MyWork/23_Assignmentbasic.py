@@ -1,7 +1,7 @@
 
 #print(input("Enter the number : ")[::-1])
 
-
+num = 44
 num = int(input("Enter your number"));
 rev_num = 0;
 
