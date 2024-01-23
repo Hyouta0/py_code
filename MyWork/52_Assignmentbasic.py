@@ -5,24 +5,21 @@ You are given two positive integers
 Write a program to list all possible ways in which one can reach to the top of the ladder.
 '''
 hgt = 3
-list = [0,0,0,0,0,0,0,0,0,0]
-max =4
-combList=[]
-def ladder(hgt,max,list,combList,lvl):
-    if(hgt == 0):
-        lst = []
-        for i in range(lvl):
-            lst.append(list[i])
-        combList.append(lst)
-        return
-    else:
-        for i in range(hgt):
-            i+=1
-            step = i
-            list[lvl] = step
-            hgt = hgt-step
-            ladder(hgt,max,list,combList,lvl+1)
+max_steps = 3
+lst = [0]* hgt
+comboLst = []
+print(lst)
 
-ladder(hgt,max,list,combList,0)
-print(combList)
+def ladder(hgt,max_steps,lvl,lst,comboLst):
+    if(hgt == 0):
+        print(f"Possible way : {lst[:lvl]}")
+        comboLst.append(lst[:lvl])
+        return
+    for i in range(1,hgt+1):
+        lst[lvl] = i 
+        ladder(hgt - i,max_steps,lvl+1,lst,comboLst)
+
+ladder(hgt,max_steps,0,lst,comboLst)
+print(comboLst)
+
 
