@@ -1,25 +1,37 @@
-
 import pandas as pd 
 
-print("+++++++++++list+++++++++++++++++++++++++++++")
-df1 = pd.DataFrame([[1,3,4],[6,7,8]])
+print("+++++++++++Pandas with list+++++++++++++++++++++++++")
+#pandas using list of list
+df = pd.DataFrame([[1,2,3],[4,5,6]])
+print(df)
+
+#pandas using list whith column name 
+df = pd.DataFrame([[1,2,3],[4,5,6]],columns=["one","two","three"])
+print(df)
+
+#pandas using list with column and index names 
+df = pd.DataFrame([[1,2,3],[4,5,6]],\
+                  columns=["one","two","three"],\
+                  index = ["High","Low"])
+print(df)
+
+#pandas using list whith custome column name and index
+columnName = ["Height","Weight","Age"]
+indexName  = ["one","two"]
+df = pd.DataFrame([[5.5,54,22],[6.0,80,23]])
+df.columns = columnName
+df.index = indexName
+print(df)
+print("printing index : ",df.index)
+
+print("+++++++++++++++Pandas with Dict++++++++++++++++++++++")
+df1 = pd.DataFrame([{"name":"kiran","surname":"biradar"},\
+                    {"name":"nishad","age":23},\
+                    {"name":"abhi","height":5.5}])
 print(df1)
-df2 = pd.DataFrame([[1,2,3],[4,5,6]],\
-                   columns=['one','two','three'])
-print(df2)
+print("Header name : ",df1.columns)
+print("Index of data : ",df1.index)
+print("Value in dict :\n",df1.values)
 
-print("+++++++++++++dictionary+++++++++++++++++++++++++")
 
-df3 = pd.DataFrame([{"name":"krain","age":23,"height":6.2},\
-                    {"name":"nishad","surname":"deshpande","age":23},\
-                    {"name":"abhi","salary":25000}
-                    ])
-print(df3)
 
-print("++++++++++++file+++++++++++++++++++++++++++++++")
-
-path = r'~/code/py_code/MyWork_high/EmpData.csv'
-
-#data = pd.read_csv(path,index_col=0)
-data = pd.read_csv(path)
-print(data.head(10))
